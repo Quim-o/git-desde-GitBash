@@ -1,0 +1,127 @@
+joaqu@Quimo MINGW64 ~
+$ cd workspace/
+
+joaqu@Quimo MINGW64 ~/workspace
+$ cd git-desde-GitBash/
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash
+$ pwd
+/c/Users/joaqu/workspace/git-desde-GitBash
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash
+$ git init
+Initialized empty Git repository in C:/Users/joaqu/workspace/git-desde-GitBash/.git/
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ LS
+index.html  info.txt
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        index.html
+        info.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git add --all
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+        new file:   info.txt
+
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git commit -m "Creamos y insertamos index y info"
+[master (root-commit) dcacf46] Creamos y insertamos index y info
+ 2 files changed, 12 insertions(+)
+ create mode 100644 index.html
+ create mode 100644 info.txt
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git branch rama1
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git branch
+* master
+  rama1
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git checkout rama1
+Switched to branch 'rama1'
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (rama1)
+$ git status
+On branch rama1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+        modified:   info.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (rama1)
+$ git add --all
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (rama1)
+$ git status -s
+M  index.html
+M  info.txt
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (rama1)
+$ git commit -m "modifico index y info"
+[rama1 52a0783] modifico index y info
+ 2 files changed, 4 insertions(+)
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (rama1)
+$ ls
+index.html  info.txt
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (rama1)
+$ git checkout master
+Switched to branch 'master'
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git merge rama1
+Updating dcacf46..52a0783
+Fast-forward
+ index.html | 2 ++
+ info.txt   | 2 ++
+ 2 files changed, 4 insertions(+)
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git commit -m "merged rama1"
+On branch master
+nothing to commit, working tree clean
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git branch
+* master
+  rama1
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$ git branch -d rama1
+Deleted branch rama1 (was 52a0783).
+
+joaqu@Quimo MINGW64 ~/workspace/git-desde-GitBash (master)
+$
